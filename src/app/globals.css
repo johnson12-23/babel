@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --onyx: #0f1111;
+  --charcoal: #181b1c;
+  --cream: #f4eee2;
+  --sand: #c7a973;
+  --gold: #f2ca7f;
+  --mist: #cfc6b6;
+  --rose-smoke: #8f6153;
+}
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-heading);
+
+  --color-onyx: var(--onyx);
+  --color-charcoal: var(--charcoal);
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
+  --color-gold: var(--gold);
+  --color-mist: var(--mist);
+  --color-rose-smoke: var(--rose-smoke);
+}
+
+body {
+  background: var(--onyx);
+  color: var(--cream);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading), serif;
+}
+
+.luxury-glow {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--gold), transparent 68%),
+    0 24px 80px color-mix(in oklab, var(--sand), transparent 84%);
+}
+
+.noise-overlay {
+  position: relative;
+}
+
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: radial-gradient(circle at 25% 25%, #ffffff 0.6px, transparent 0.6px);
+  background-size: 18px 18px;
+}
+
+.hero-backdrop {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(242, 202, 127, 0.26), transparent 42%),
+    radial-gradient(circle at 80% 85%, rgba(143, 97, 83, 0.32), transparent 42%),
+    linear-gradient(130deg, #0f1111, #161818 42%, #201d1a 100%);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
