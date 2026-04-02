@@ -3,7 +3,7 @@ import "server-only";
 import { jwtVerify } from "jose";
 import { cookies } from "next/headers";
 
-const secret = new TextEncoder().encode(process.env.ADMIN_JWT_SECRET || "dev-secret-key-for-testing-only");
+const secret = new TextEncoder().encode((process.env.ADMIN_JWT_SECRET || "dev-secret-key-for-testing-only").trim());
 
 export async function getAdminSession() {
   const cookieStore = await cookies();

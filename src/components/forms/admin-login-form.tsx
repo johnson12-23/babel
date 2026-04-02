@@ -32,6 +32,10 @@ export function AdminLoginForm() {
       }
 
       setAuthenticated(true);
+      
+      // Give the cookie time to be set before redirecting
+      await new Promise(resolve => setTimeout(resolve, 200));
+      
       router.push("/admin");
       router.refresh();
     } catch {
