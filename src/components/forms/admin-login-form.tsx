@@ -8,6 +8,7 @@ export function AdminLoginForm() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [authenticated, setAuthenticated] = useState(false);
   const router = useRouter();
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -26,16 +27,27 @@ export function AdminLoginForm() {
 
       if (!response.ok) {
         setError(data.message || "Invalid credentials");
+        setLoading(false);
         return;
       }
 
+      setAuthenticated(true);
       router.push("/admin");
       router.refresh();
     } catch {
       setError("Network error. Please try again.");
-    } finally {
       setLoading(false);
     }
+  }
+
+  if (authenticated) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-onyx">
+        <div className="text-center">
+          <p className="text-cream text-lg font-semibold">Launching dashboard...</p>
+        </div>
+      </div>
+    );
   }
 
   return (
