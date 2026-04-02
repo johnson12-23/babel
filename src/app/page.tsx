@@ -10,7 +10,7 @@ export default async function Home() {
 
   return (
     <div className="noise-overlay">
-      <section className="hero-backdrop relative overflow-hidden px-5 pt-16 pb-20 sm:px-10 lg:px-16">
+      <section className="hero-backdrop relative overflow-hidden px-4 pt-14 pb-16 sm:px-8 sm:pt-16 sm:pb-20 lg:px-12">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
           <Reveal>
             <p className="mb-4 text-sm uppercase tracking-[0.35em] text-mist">Accra | Since 2018</p>
@@ -61,7 +61,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-14 sm:px-10 lg:px-16">
+      <section className="px-4 py-12 sm:px-8 sm:py-14 lg:px-12">
         <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-3">
           {quickStats.map((item, index) => (
             <Reveal key={item.label} delay={index * 0.08}>
@@ -75,7 +75,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-10 lg:px-16">
+      <section className="px-4 py-14 sm:px-8 sm:py-16 lg:px-12">
         <div className="mx-auto max-w-7xl">
           <Reveal>
             <h2 className="text-4xl font-semibold text-cream sm:text-5xl">Featured Dishes</h2>
@@ -97,15 +97,15 @@ export default async function Home() {
 
       <PhotoShowcase />
 
-      <section className="px-5 pt-4 pb-20 sm:px-10 lg:px-16">
-        <div className="mx-auto max-w-7xl rounded-3xl border border-gold/25 bg-charcoal/45 p-8 backdrop-blur-sm sm:p-10">
+      <section className="px-4 pt-4 pb-16 sm:px-8 sm:pb-20 lg:px-12">
+        <div className="mx-auto max-w-7xl rounded-3xl border border-gold/30 bg-charcoal/65 p-6 backdrop-blur-sm sm:p-10">
           <Reveal>
             <h2 className="text-3xl font-semibold text-cream sm:text-4xl">What Guests Love</h2>
           </Reveal>
           <div className="mt-6 grid gap-5 md:grid-cols-3">
             {reviewHighlights.map((review, idx) => (
               <Reveal key={review.author} delay={idx * 0.08}>
-                <blockquote className="rounded-2xl border border-mist/20 bg-onyx/55 p-5">
+                <blockquote className="rounded-2xl border border-mist/25 bg-onyx/80 p-5">
                   <p className="text-sm leading-relaxed text-mist">&ldquo;{review.quote}&rdquo;</p>
                   <footer className="mt-4 text-sm font-semibold text-cream">{review.author}</footer>
                 </blockquote>
@@ -117,7 +117,7 @@ export default async function Home() {
             <h3 className="text-2xl font-semibold text-cream">Upcoming Moments</h3>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               {events.map((event) => (
-                <div key={event.title} className="rounded-xl border border-mist/20 bg-onyx/55 p-4">
+                <div key={event.title} className="rounded-xl border border-mist/25 bg-onyx/80 p-4">
                   <p className="text-lg font-semibold text-gold">{event.title}</p>
                   <p className="mt-2 text-sm text-mist">{event.description}</p>
                   <p className="mt-3 text-xs uppercase tracking-wider text-cream">{event.eventDate}</p>

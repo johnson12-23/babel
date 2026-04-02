@@ -24,7 +24,7 @@ export function AdminNav() {
   }
 
   return (
-    <nav className="border-b border-mist/15 bg-charcoal/75 px-5 py-4 sm:px-10 lg:px-16">
+    <nav className="border-b border-mist/20 bg-charcoal/80 px-4 py-3 sm:px-8 sm:py-4 lg:px-12">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3">
         <div className="flex min-w-0 items-center gap-4 sm:gap-8">
           <Link href="/admin" className="text-xl font-semibold tracking-[0.15em] text-gold">
@@ -49,7 +49,7 @@ export function AdminNav() {
           <button
             type="button"
             onClick={() => setMobileOpen((value) => !value)}
-            className="inline-flex items-center gap-2 rounded-full border border-mist/25 px-3 py-2 text-sm font-semibold text-mist transition hover:border-gold hover:text-gold md:hidden"
+            className="inline-flex items-center gap-2 rounded-full border border-mist/35 px-3 py-2 text-sm font-semibold text-mist transition hover:border-gold hover:text-gold md:hidden"
             aria-label="Toggle admin navigation"
           >
             {mobileOpen ? <X size={16} /> : <Menu size={16} />}
@@ -59,7 +59,7 @@ export function AdminNav() {
           <button
             type="button"
             onClick={handleLogout}
-            className="inline-flex items-center gap-2 rounded-full border border-mist/25 px-4 py-2 text-sm font-semibold text-mist transition hover:border-gold hover:text-gold"
+            className="inline-flex items-center gap-2 rounded-full border border-mist/35 px-4 py-2 text-sm font-semibold text-mist transition hover:border-gold hover:text-gold"
           >
             <LogOut size={16} />
             <span className="hidden sm:inline">Logout</span>
@@ -68,7 +68,7 @@ export function AdminNav() {
       </div>
 
       {mobileOpen && (
-        <div className="mx-auto mt-4 max-w-7xl rounded-2xl border border-mist/15 bg-onyx/95 px-4 py-4 md:hidden">
+        <div className="mx-auto mt-3 max-w-7xl rounded-2xl border border-mist/20 bg-onyx/95 px-3 py-3 md:hidden">
           <div className="grid gap-2">
             {navItems.map((item) => (
               <Link
@@ -76,7 +76,7 @@ export function AdminNav() {
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
                 className={`rounded-xl px-3 py-3 text-sm font-semibold transition ${
-                  pathname === item.href ? "bg-gold text-onyx" : "text-mist hover:bg-charcoal hover:text-cream"
+                  pathname === item.href ? "bg-gold text-onyx" : "text-mist hover:bg-charcoal/80 hover:text-cream"
                 }`}
               >
                 {item.label}

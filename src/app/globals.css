@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --onyx: #0f1111;
-  --charcoal: #181b1c;
-  --cream: #f4eee2;
-  --sand: #c7a973;
-  --gold: #f2ca7f;
-  --mist: #cfc6b6;
+  --onyx: #ffffff;
+  --charcoal: #f8f3e8;
+  --cream: #1f1d18;
+  --sand: #b88d45;
+  --gold: #9c6a1f;
+  --mist: #5e5648;
   --rose-smoke: #8f6153;
 }
 
@@ -38,8 +38,8 @@ h4 {
 
 .luxury-glow {
   box-shadow:
-    0 0 0 1px color-mix(in oklab, var(--gold), transparent 68%),
-    0 24px 80px color-mix(in oklab, var(--sand), transparent 84%);
+    0 0 0 1px color-mix(in oklab, var(--gold), transparent 74%),
+    0 12px 36px color-mix(in oklab, var(--sand), transparent 87%);
 }
 
 .noise-overlay {
@@ -51,16 +51,16 @@ h4 {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.08;
+  opacity: 0.05;
   background-image: radial-gradient(circle at 25% 25%, #ffffff 0.6px, transparent 0.6px);
   background-size: 18px 18px;
 }
 
 .hero-backdrop {
   background:
-    radial-gradient(circle at 10% 10%, rgba(242, 202, 127, 0.26), transparent 42%),
-    radial-gradient(circle at 80% 85%, rgba(143, 97, 83, 0.32), transparent 42%),
-    linear-gradient(130deg, #0f1111, #161818 42%, #201d1a 100%);
+    radial-gradient(circle at 10% 10%, rgba(184, 141, 69, 0.22), transparent 42%),
+    radial-gradient(circle at 80% 85%, rgba(143, 97, 83, 0.16), transparent 42%),
+    linear-gradient(130deg, #ffffff, #fbf8f1 42%, #f5efe3 100%);
 }
 
 @keyframes float {

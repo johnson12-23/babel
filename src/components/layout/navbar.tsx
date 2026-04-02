@@ -12,8 +12,8 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-mist/15 bg-onyx/80 backdrop-blur-lg">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-10 lg:px-16">
+    <header className="sticky top-0 z-50 border-b border-mist/20 bg-onyx/90 backdrop-blur-lg">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-8 sm:py-4 lg:px-12">
         <Link href="/" className="text-2xl font-semibold tracking-[0.2em] text-gold">
           BABEL
         </Link>
@@ -37,7 +37,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="rounded-full border border-mist/25 p-2 text-mist md:hidden"
+          className="rounded-full border border-mist/35 p-2 text-mist transition hover:border-gold hover:text-gold md:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-label="Toggle menu"
         >
@@ -52,14 +52,14 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.2 }}
-            className="border-t border-mist/15 bg-charcoal/95 px-5 py-4 md:hidden"
+            className="border-t border-mist/20 bg-charcoal/95 px-4 py-4 md:hidden"
           >
             <div className="mx-auto flex max-w-7xl flex-col gap-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-lg px-2 py-2 text-sm text-mist transition hover:bg-onyx hover:text-cream"
+                  className="rounded-lg px-3 py-2 text-sm text-mist transition hover:bg-onyx/70 hover:text-cream"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
